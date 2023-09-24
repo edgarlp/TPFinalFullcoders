@@ -1,0 +1,54 @@
+Algoritmo GestionNotasEscolares
+    Definir numeroAlumnos Como Entero
+    dimension notas[50]
+    dimension nombres[100] 
+    Definir i Como Entero
+    Definir notaMinima Como Real
+    Definir notaMaxima Como Real
+    Definir sumaNotas Como Real
+    Definir promedio Como Real
+    
+    Escribir "Bienvenido al sistema de gestión de notas escolares"
+    
+    Escribir "Ingrese el número de alumnos: "
+    Leer numeroAlumnos
+    
+    Para i = 1 Hasta numeroAlumnos
+        Escribir "Ingrese el nombre del alumno ", i, ": "
+        Leer nombres[i]
+        
+        Escribir "Ingrese la nota del alumno ", nombres[i], ": "
+        Leer notas[i]
+        
+        Si i = 1 Entonces
+            notaMinima <- notas[i]
+            notaMaxima <- notas[i]
+        Sino
+            Si notas[i] < notaMinima Entonces
+                notaMinima <- notas[i]
+            FinSi
+            Si notas[i] > notaMaxima Entonces
+                notaMaxima <- notas[i]
+            FinSi
+        FinSi
+    Fin Para
+    
+    sumaNotas <- 0
+    
+    Para i = 1 Hasta numeroAlumnos
+        sumaNotas <- sumaNotas + notas[i]
+    Fin Para
+    
+    promedio <- sumaNotas / numeroAlumnos
+    
+    Escribir "Notas de los alumnos:"
+    
+    Para i = 1 Hasta numeroAlumnos
+        Escribir "Alumno ", nombres[i], ": ", notas[i]
+    Fin Para
+    
+    Escribir "El promedio de notas de los alumnos es: ", promedio
+    Escribir "La nota mínima es: ", notaMinima
+    Escribir "La nota máxima es: ", notaMaxima
+    
+FinAlgoritmo
